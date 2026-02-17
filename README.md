@@ -10,8 +10,7 @@ The inference module operates in near real-time, continuously processing incomin
 
 The system architecture emphasizes modularity, enabling extensibility for:
 - Additional motor imagery classes
-- Advanced classifiers (e.g., SVM, Random Forest, Neural Networks)
-- Deep learning-based EEG decoding
+- Advanced classifiers ( SVM)
 - Online adaptive learning strategies
 - Integration with alternative EEG hardware platforms
 
