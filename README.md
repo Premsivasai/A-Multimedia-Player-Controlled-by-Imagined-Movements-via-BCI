@@ -1,56 +1,54 @@
-# A Multimedia Player Controlled by Imagined Movements via Brain–Computer Interface (BCI)
+# A Multimedia Player Controlled by Imagined Movements via BCI
 
-This project presents a real-time Brain–Computer Interface (BCI) system that enables hands-free control of a multimedia player through motor imagery-based EEG signal classification. The system leverages neural signal processing, feature engineering, and supervised machine learning to decode user intention from imagined motor movements and translate them into actionable software control commands.
+## Project Overview
+This project combines Brain-Computer Interface (BCI) technology with multimedia player controls. It allows users to control multimedia playback through imagined movements, offering a hands-free interaction experience.
 
-The proposed pipeline follows a standard BCI architecture consisting of signal acquisition, preprocessing, feature extraction, classification, and command execution. EEG signals are acquired from a compatible headset while the user performs imagined motor tasks (e.g., left-hand or right-hand movement imagery). Raw EEG data undergoes preprocessing stages including band-pass filtering, artifact reduction, and segmentation into temporal windows suitable for analysis. These preprocessing steps enhance signal-to-noise ratio and isolate frequency components relevant to motor imagery, particularly within the Mu (8–13 Hz) and Beta (13–30 Hz) bands.
+## Key Features
+- Control multimedia players using BCI technology.
+- Real-time response to imagined movements.
+- User-friendly interface for configuration and usage.
 
-Feature extraction is performed to transform high-dimensional EEG time-series data into discriminative representations. Statistical, spectral, or time–frequency domain features are computed depending on the experimental configuration. These features are then used to train a supervised machine learning classifier capable of distinguishing between motor imagery classes. The trained model outputs class predictions corresponding to user intent.
+## Repository Structure
+- **src/**: Contains the source code for the BCI control logic.
+- **models/**: Includes pre-trained models for movement classification.
+- **data/**: Datasets used for training the models and input data expectations.
+- **config/**: Configuration files for setting up the project environment.
+- **README.md**: This documentation file.
+- **LICENSE**: License details regarding the usage of the code.
 
-The inference module operates in near real-time, continuously processing incoming EEG data streams and generating classification outputs. These predictions are mapped to predefined multimedia control commands such as Play, Pause, Next Track, or Previous Track. The command interface integrates with a Python-based multimedia player, demonstrating seamless interaction between neural signals and software control mechanisms.
-
-The system architecture emphasizes modularity, enabling extensibility for:
-- Additional motor imagery classes
-- Advanced classifiers ( SVM)
-- Online adaptive learning strategies
-- Integration with alternative EEG hardware platforms
-
-From a computational perspective, the project demonstrates practical implementation of:
-- Digital signal processing techniques for biosignals
-- Feature engineering for EEG-based classification
-- Supervised learning model training and evaluation
-- Real-time inference pipelines
-- Human–Computer Interaction (HCI) through neural interfaces
-
-This work contributes to the domain of assistive technology and neuroadaptive systems by providing a proof-of-concept framework for translating brain activity into direct software control. Potential applications include accessibility tools for individuals with motor impairments, smart environment control, and next-generation human–machine interfaces.
+## Prerequisites
+- Python 3.6 or later
+- Required packages listed in `requirements.txt`
+- A compatible OS (Windows, macOS, or Linux)
 
 ## Installation
+1. Clone the repository:  
+   `git clone https://github.com/Premsivasai/A-Multimedia-Player-Controlled-by-Imagined-Movements-via-BCI.git`
+2. Navigate to the project directory:  
+   `cd A-Multimedia-Player-Controlled-by-Imagined-Movements-via-BCI`
+3. Install required packages:  
+   `pip install -r requirements.txt`
 
-Clone the repository:
+## Usage
+To train the model, use the following command:  
+`python src/train_model.py --data_path data/ --output_path models/`
 
-git clone https://github.com/Premsivasai/A-Multimedia-Player-Controlled-by-Imagined-Movements-via-BCI.git
+To run inference or real-time control, use:  
+`python src/run_control.py --model_path models/your_model.h5`
 
-Navigate to the project directory and install dependencies:
+## Configuration
+Configuration files located in the `config/` directory can be modified to suit your needs, including the choice of dataset and model parameters.
 
-pip install -r requirements.txt
+## Dataset / Input Expectations
+Input data should match the structure and format defined in the documentation within the `data/` folder. Ensure all datasets are properly pre-processed before training.
 
-Ensure EEG device connectivity and run the training or inference scripts as required.
+## Model Details
+The project utilizes machine learning models trained to classify imagined movements from BCI/EEG signals, focusing on recognizing user intent for multimedia control.
 
-## Technologies Used
+## Troubleshooting
+- Ensure all prerequisites are installed.
+- Verify EEG/BCI device connectivity (if applicable).
+- Review command parameters and paths.
 
-- Python
-- NumPy, SciPy
-- Scikit-learn
-- MNE (for EEG processing, if applicable)
-- Real-time multimedia control interface
-
-## Research Domains
-
-- Brain–Computer Interfaces (BCI)
-- EEG Signal Processing
-- Motor Imagery Classification
-- Machine Learning for Biosignals
-- Human–Computer Interaction (HCI)
-- Assistive AI Systems
-
-Author: Premsivasai Kumar Reddy  
-GitHub: https://github.com/Premsivasai
+## License
+No license specified.
